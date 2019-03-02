@@ -1,3 +1,6 @@
 [submodule "info/i2c-moisture-sensor"]
 	path = info/i2c-moisture-sensor
 	url = https://github.com/Miceuz/i2c-moisture-sensor.git
+[submodule "info/Adafruit-STEMMA-Soil-Sensor-PCB"]
+	path = info/Adafruit-STEMMA-Soil-Sensor-PCB
+	url = https://github.com/adafruit/Adafruit-STEMMA-Soil-Sensor-PCB.git
