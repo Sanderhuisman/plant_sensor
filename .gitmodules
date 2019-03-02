@@ -1,0 +1,3 @@
+[submodule "info/i2c-moisture-sensor"]
+	path = info/i2c-moisture-sensor
+	url = https://github.com/Miceuz/i2c-moisture-sensor.git
