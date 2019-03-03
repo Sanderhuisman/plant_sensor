@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:plant_sensor-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -27,16 +28,14 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm75b.pdf" H 6000 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5600 4050 5200 4050
-Wire Wire Line
-	5200 4150 5600 4150
-Text Label 5200 4050 0    50   ~ 0
+	5050 4150 5600 4150
+Text Label 5050 4050 0    50   ~ 0
 TEMP_SDA
-Text Label 5200 4150 0    50   ~ 0
+Text Label 5050 4150 0    50   ~ 0
 TEMP_SCL
 Wire Wire Line
-	5600 4250 5200 4250
-Text Label 5200 4250 0    50   ~ 0
+	5600 4250 5450 4250
+Text Label 5050 4250 0    50   ~ 0
 TEMP_IRQ
 $Comp
 L power:GND #PWR?
@@ -138,12 +137,45 @@ F 3 "" H 6850 4700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6850 4700 6850 4650
-Text HLabel 5200 4050 0    50   BiDi ~ 0
+Text HLabel 5050 4050 0    50   BiDi ~ 0
 TEMP_SDA
-Text HLabel 5200 4150 0    50   BiDi ~ 0
+Text HLabel 5050 4150 0    50   BiDi ~ 0
 TEMP_SCL
-Text HLabel 5200 4250 0    50   Output ~ 0
+Text HLabel 5050 4250 0    50   Output ~ 0
 TEMP_IRQ
 Text Notes 6600 3750 0    50   ~ 0
 STLM75
+$Comp
+L Device:R R8
+U 1 1 5C75849B
+P 5450 3800
+F 0 "R8" H 5520 3846 50  0000 L CNN
+F 1 "10K" H 5520 3755 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5380 3800 50  0001 C CNN
+F 3 "~" H 5450 3800 50  0001 C CNN
+	1    5450 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 3950 5450 4250
+Connection ~ 5450 4250
+Wire Wire Line
+	5600 4050 5050 4050
+Wire Wire Line
+	5450 4250 5050 4250
+$Comp
+L power:VDD #PWR?
+U 1 1 5C7587E2
+P 5450 3600
+AR Path="/5C7587E2" Ref="#PWR?"  Part="1" 
+AR Path="/5C708F8B/5C7587E2" Ref="#PWR0110"  Part="1" 
+F 0 "#PWR0110" H 5450 3450 50  0001 C CNN
+F 1 "VDD" H 5467 3773 50  0000 C CNN
+F 2 "" H 5450 3600 50  0001 C CNN
+F 3 "" H 5450 3600 50  0001 C CNN
+	1    5450 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 3600 5450 3650
 $EndSCHEMATC

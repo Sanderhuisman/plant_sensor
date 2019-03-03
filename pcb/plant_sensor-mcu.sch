@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:plant_sensor-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -21,12 +22,12 @@ AR Path="/5C7286EA" Ref="Y?"  Part="1"
 AR Path="/5C7262D1/5C7286EA" Ref="Y1"  Part="1" 
 F 0 "Y1" H 5200 5868 50  0000 C CNN
 F 1 "32.768kHz" H 5200 5777 50  0000 C CNN
-F 2 "" H 5200 5600 50  0001 C CNN
+F 2 "Crystals:Crystal_SMD_TXC_9HT11-2pin_2.0x1.2mm_HandSoldering" H 5200 5600 50  0001 C CNN
 F 3 "~" H 5200 5600 50  0001 C CNN
 	1    5200 5600
 	1    0    0    -1  
 $EndComp
-Text Notes 4250 5600 0    50   ~ 0
+Text Notes 4800 6500 0    50   ~ 0
 ABS25-32.768KHz
 $Comp
 L Device:C C?
@@ -288,7 +289,7 @@ AR Path="/5C72923F" Ref="SW?"  Part="1"
 AR Path="/5C7262D1/5C72923F" Ref="SW1"  Part="1" 
 F 0 "SW1" V 8354 5598 50  0000 L CNN
 F 1 "SW_Push" V 8445 5598 50  0000 L CNN
-F 2 "" H 8400 5650 50  0001 C CNN
+F 2 "Buttons_Switches_SMD:SW_SPST_SKQG" H 8400 5650 50  0001 C CNN
 F 3 "" H 8400 5650 50  0001 C CNN
 	1    8400 5450
 	0    1    1    0   
@@ -747,15 +748,85 @@ Wire Wire Line
 Wire Wire Line
 	2700 2250 2150 2250
 Wire Wire Line
-	5100 4200 4500 4200
+	5100 4200 4450 4200
 Wire Wire Line
-	4500 4100 5100 4100
+	3750 4100 4150 4100
 Wire Wire Line
-	5100 4000 4500 4000
-Text Label 4500 4000 0    50   ~ 0
+	5100 4000 4700 4000
+Text Label 4700 4000 0    50   ~ 0
 TEMP_IRQ
-Text Label 4500 4100 0    50   ~ 0
+Text Label 3750 4100 0    50   ~ 0
 I2C1_SCL
-Text Label 4500 4200 0    50   ~ 0
+Text Label 3750 4200 0    50   ~ 0
 I2C1_SDA
+$Comp
+L Device:R R?
+U 1 1 5C74939F
+P 4150 3900
+AR Path="/5C74939F" Ref="R?"  Part="1" 
+AR Path="/5C7262D1/5C74939F" Ref="R6"  Part="1" 
+F 0 "R6" H 4220 3946 50  0000 L CNN
+F 1 "4K7" H 4220 3855 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4080 3900 50  0001 C CNN
+F 3 "~" H 4150 3900 50  0001 C CNN
+	1    4150 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C74B0B1
+P 4450 3900
+AR Path="/5C74B0B1" Ref="R?"  Part="1" 
+AR Path="/5C7262D1/5C74B0B1" Ref="R7"  Part="1" 
+F 0 "R7" H 4520 3946 50  0000 L CNN
+F 1 "4K7" H 4520 3855 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4380 3900 50  0001 C CNN
+F 3 "~" H 4450 3900 50  0001 C CNN
+	1    4450 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 4050 4150 4100
+Connection ~ 4150 4100
+Wire Wire Line
+	4150 4100 5100 4100
+Wire Wire Line
+	4450 4050 4450 4200
+Connection ~ 4450 4200
+Wire Wire Line
+	4450 4200 3750 4200
+$Comp
+L power:VDDA #PWR?
+U 1 1 5C754242
+P 4150 3700
+AR Path="/5C754242" Ref="#PWR?"  Part="1" 
+AR Path="/5C7262D1/5C754242" Ref="#PWR0108"  Part="1" 
+F 0 "#PWR0108" H 4150 3550 50  0001 C CNN
+F 1 "VDDA" H 4167 3873 50  0000 C CNN
+F 2 "" H 4150 3700 50  0001 C CNN
+F 3 "" H 4150 3700 50  0001 C CNN
+	1    4150 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDDA #PWR?
+U 1 1 5C754271
+P 4450 3700
+AR Path="/5C754271" Ref="#PWR?"  Part="1" 
+AR Path="/5C7262D1/5C754271" Ref="#PWR0109"  Part="1" 
+F 0 "#PWR0109" H 4450 3550 50  0001 C CNN
+F 1 "VDDA" H 4467 3873 50  0000 C CNN
+F 2 "" H 4450 3700 50  0001 C CNN
+F 3 "" H 4450 3700 50  0001 C CNN
+	1    4450 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 3700 4450 3750
+Wire Wire Line
+	4150 3700 4150 3750
+Text Notes 7750 6400 0    50   ~ 0
+SKQGAFE010  0.98N\nSKQGABE010  1.57N\nSKQGADE010  2.55N\nSKQGAKE020  3.43N
+Text Notes 4750 6350 0    50   ~ 0
+9HT11-32.768KEZF-T
 $EndSCHEMATC
