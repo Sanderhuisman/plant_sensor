@@ -4,3 +4,6 @@
 [submodule "info/Adafruit-STEMMA-Soil-Sensor-PCB"]
 	path = info/Adafruit-STEMMA-Soil-Sensor-PCB
 	url = https://github.com/adafruit/Adafruit-STEMMA-Soil-Sensor-PCB.git
+[submodule "info/PlantWateringAlarm"]
+	path = info/PlantWateringAlarm
+	url = https://github.com/Miceuz/PlantWateringAlarm.git
